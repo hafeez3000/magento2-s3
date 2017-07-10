@@ -27,6 +27,11 @@ Complex file syncing between multiple servers is now a thing of the past with th
 
 CloudFront CDN supports using S3 as an origin server so you can significantly reduce load on your servers.
 
+### Create S3 bucket with versioning support
+
+For avoid accident delete file or got ransomware needed to recover files. See below for details.
+https://superuser.com/questions/55688/amazon-s3-recover-deleted-file
+
 Installation
 ------------
 Run following command
