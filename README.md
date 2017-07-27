@@ -43,7 +43,9 @@ Installation
 
 * Go to Stores -> Configuration -> General -> Web. Change the Base URL for User Media Files and Secure Base URL for User Media Files to s3 url or cloud front url.
 
-* Add Following fall back rules to S3
+* Enable the Static website hosting in S3.
+
+* Add Following fall back rules to S3 Static website hosting
 `````````````````````
 	<RoutingRules>
   		<RoutingRule>
@@ -62,7 +64,7 @@ Installation
 * For avoid accident delete file or got ransomware needed to recover files. See below for details.
 https://superuser.com/questions/55688/amazon-s3-recover-deleted-file
 
-* If your site is using https, will need to setup Clound Front with ssl cert. Otherwise the site will show unsecured.
+* If your site is using https, will need to setup Clound Front with ssl cert. Otherwise the site will show unsecured. Origin of cloud front should point to Static website hosting endpoint.
 
 -------
 
