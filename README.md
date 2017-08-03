@@ -47,18 +47,31 @@ Installation
 
 * Add Following fall back rules to S3 Static website hosting
 `````````````````````
-	<RoutingRules>
-  		<RoutingRule>
-    		<Condition>
-      			<HttpErrorCodeReturnedEquals>403</HttpErrorCodeReturnedEquals>
-    		</Condition>
-    		<Redirect>
-      			<HostName>your.host.name</HostName>
-      			<ReplaceKeyPrefixWith>pub/media/</ReplaceKeyPrefixWith>
-      			<HttpRedirectCode>302</HttpRedirectCode>
-    		</Redirect>
-  		</RoutingRule>
-	</RoutingRules>
+<RoutingRules>
+  <RoutingRule>
+    <Condition>
+      <HttpErrorCodeReturnedEquals>404</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>
+      <Protocol>https</Protocol>
+      <HostName>your.host.name</HostName>
+      <ReplaceKeyPrefixWith>pub/media/</ReplaceKeyPrefixWith>
+      <HttpRedirectCode>302</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+  <RoutingRule>
+    <Condition>
+      <HttpErrorCodeReturnedEquals>403</HttpErrorCodeReturnedEquals>
+    </Condition>
+    <Redirect>
+      <Protocol>https</Protocol>
+      <HostName>your.host.name</HostName>
+      <ReplaceKeyPrefixWith>pub/media/</ReplaceKeyPrefixWith>
+      <HttpRedirectCode>302</HttpRedirectCode>
+    </Redirect>
+  </RoutingRule>
+</RoutingRules>
+
 `````````````````````
 
 * For avoid accident delete file or got ransomware needed to recover files. See below for details.
