@@ -49,7 +49,12 @@
 
 
     <type name="Magento\Swatches\Helper\Media">
-        <plugin name="fd_portochild_swatches_helper_media_plugin" type="Arkade\S3\Helper\Swatches\Media\Plugin"/>
+        <plugin name="arkade_s3_swatches_helper_media_plugin" type="Arkade\S3\Helper\Swatches\Media\Plugin"/>
+    </type>
+
+
+    <type name="Magento\Catalog\Model\Category">
+        <plugin name="arkade_s3_catalog_model_category_plugin" type="Arkade\S3\Model\Catalog\Category\Plugin"/>
     </type>
  
 </config>
