@@ -66,6 +66,7 @@ class Plugin
         return $proceed($filename);
     }
 
+
     /**
      * The Magento_ImportExport module will try to run erroneous file paths,
      * e.g. pub/media/catalog/category/twswifty.jpg, through the parent function
@@ -100,17 +101,4 @@ class Plugin
         }
     }
 
-    /**
-     * Removes any forward slashes from the start of the uploaded file name.
-     * This addresses a bug where category pages were being saved with duplicate
-     * slashes, e.g. catalog/category//tswifty_4.jpg.
-     *
-     * @param Database $subject
-     * @param string $result
-     * @return string
-     */
-    public function afterSaveUploadedFile(Database $subject, $result)
-    {
-        return ltrim($result, '/');
-    }
 }

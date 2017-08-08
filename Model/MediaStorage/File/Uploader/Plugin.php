@@ -20,7 +20,7 @@ class Plugin
     public function afterSave($subject, $result)
     {
         if ($this->helper->checkS3Usage()) {
-            $s3result = $this->storageModel->saveFile($this->storageHelper->getMediaRelativePath($result["path"]."/".$result["file"]));
+            $s3result = $this->storageModel->saveFile($this->storageHelper->getMediaRelativePath($result["path"].$result["file"]));
             if (!$s3result) {
                 $e = new Exception('Division by zero.', 0);
                 throw $e;

@@ -98,7 +98,7 @@ class Plugin
      */
     public function getAttributeSwatchPath($file)
     {
-        return $this->getSwatchMediaPath() . $this->prepareFile($file);
+        return $this->getSwatchMediaPath() . '/' .$this->prepareFile($file);
     }
 
     /**
@@ -118,7 +118,7 @@ class Plugin
      */
     public function getSwatchMediaPath()
     {
-        return self::SWATCH_MEDIA_PATH.'/';
+        return self::SWATCH_MEDIA_PATH;
     }
 
 
